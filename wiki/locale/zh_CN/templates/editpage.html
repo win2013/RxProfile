@@ -1,0 +1,52 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="robots" content="noindex,nofollow" />
+<meta name="language" content="en" />
+<meta name="PHPWIKI_VERSION" content="###PHPWIKI_VERSION###" />
+<link rel="shortcut icon" href="###DATA_PATH###/images/favicon.ico" />
+<title>###PAGE###</title>
+</head>
+
+<body>
+
+<form method="post" action="###SCRIPTURL###">
+
+<h1><a href="###SCRIPTURL###"><img src="###LOGO###" border="0" alt="[phpwiki]" width="50" height="50"></a>
+编辑 ###PAGE###
+<input type="submit" value=" Save "></h1>
+
+<textarea name="content" rows="22" cols="80" wrap="virtual">###CONTENT###</textarea>
+<br />
+<input type="checkbox" name="minor_edit" value="yes"
+###IF MINOR_EDIT### checked
+>
+这是一个小更改，不要存档旧的版本.
+<br />
+<input type="checkbox" name="convert" value="tabs" >
+我无法输入制表符Tab.请<a href="###SCRIPTURL###?转换空格为制表符">转换空格为制表符</a>
+<p /><a href="###SCRIPTURL###?好风格">好风格</a> 编辑提示.
+
+<br />
+<a href="###SCRIPTURL###?links=###PAGEURL###">编辑连接</a>到其他网络服务器。 
+
+###IF COPY###<br /><a href="###SCRIPTURL###?copy=###PAGEURL###">编辑副本</a>从前一个作者
+
+<hr noshade>
+<small>
+<b>强调:</b> '' 斜体, ''' 粗体, ''''' 两者 
+<br /><b>列表:</b> tab-* 项目符号列表, tab-# 数字列表, tab-Term:-tab 定义列表
+<br /><b>引用:</b> 结合大写字母或者在文本或URL两边使用方括号 [page link] or URL [http://cool.wiki.int/].
+<br /><b>引用:</b> 使用 [1],[2],[3],... 和编辑连接. 避免连接 "!": !DoNotHyperlink, 命名连接使用 [text | URL]
+<br /><b>工具:</b>"!", "!!", "!!!" 表示标题,
+"%%%" 产生一个换行, "- - - -" 产生一个水平线, 转义 "[" 为 "[["
+<br />更多参见
+<a href="###SCRIPTURL###?文本格式化规则"><b>文本格式化规则</b></a>
+</small>
+
+<input type="hidden" name="action" value="save" />
+<input type="hidden" name="post" value="###PAGE###" />
+<input type="hidden" name="editversion" value="###VERSION###" />
+</form>
+</body>
+</html>

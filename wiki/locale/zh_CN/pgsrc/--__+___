@@ -1,0 +1,15 @@
+PhpWiki 使用服务器端脚本PHP进行编写的（你可以从 http://www.php.net 获得最新的PHP）。PHP语法上类似于 C语言和Perl语言，功能上类似于ASP，EmbPerl和JSP。
+
+PhpWiki 由好多混合了PHP和HTML的文件组成。组成 WikiWikiWeb 的网页存在一个DBM文件中并且同时在另一个DBM文件中保存了页面以前版本的备份。
+
+每次一个用户点击网站时，被请求的页面会从DBM中读取出来并迅速渲染。用户也许仅仅只会请求index.php文件，然后由他来决定那个php文件需要被包含。
+
+Wiki中页面的连接是自动连接的： PhpWiki. 这个也许就是Wiki最引人注目的方面，这种简单方便创建和连接页面的能力。第二个引人注目的东西就是外部的URL连接:
+# http://www.wcsb.org/
+# ftp://ftp.redhat.com/
+# news://news.mozilla.org/
+
+通过一个命名空间和一种简单的标记，Wiki展示了很多 WabiSabi 的特性.
+
+PhpWiki 基于Gnu General Public license协议发布, 你可以在这里看到: http://www.gnu.org/copyleft/gpl.txt.
+

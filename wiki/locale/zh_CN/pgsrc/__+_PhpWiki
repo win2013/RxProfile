@@ -1,0 +1,49 @@
+!!! 这只有在你以ADMIN身份登录的时候才可以运行.
+Go to !http://yourhost.yourdomain/yourwikidir/admin.php.
+
+-----------
+
+! 数据库的ZIP文件
+
+ __[ZIP Snapshot | phpwiki:?zip=snapshot]__ : 仅包含最新版本 
+
+ __[ZIP Dump | phpwiki:?zip=all]__ : 包含所有存档的版本
+
+这些连接将会立刻产生一个zip文件， 它包含了PhpWiki中的大多数版本。这些页面会一个个文件以MIME（RFC2045）电子邮件（RFC822）消息的格式储存，快照内容格式为application/x-phpwiki，转存格式为multipart/mixed。后者，每一个子部分（格式为application/x-phpwiki）是页面
+These links lead to zip files, generated on the fly, which contain the most
+recent versions of all pages in the PhpWiki. The pages are stored, one per
+file, as MIME (RFC2045) e-mail (RFC822) messages, with the content type
+application/x-phpwiki for the snapshot and content type multipart/mixed for
+the dump. In the latter case, there is one subpart (with type
+application/x-phpwiki) for each version of the
+page (in chronological order). The message body contains the page text,
+while the page meta-data is included as parameters in the
+Content-Type: header field.
+
+-----------
+
+! Load / Dump Serialized Pages
+
+Here you can load or dump pages of your Wiki into a directory of your
+choice.
+
+__Dump__
+
+%%ADMIN-INPUT-dumpserial-Dump_serialized_pages%%
+
+Pages will be written out as "serialized" strings of a PHP
+associative array, meaning they will not be human readable. If
+the directory does not exist PhpWiki will try to create one for you.
+Ensure that your server has write permissions to the directory!
+
+__Load__
+
+%%ADMIN-INPUT-loadserial-Load_serialized_pages%%
+
+If you have dumped a set of pages from PhpWiki, you can reload them here.
+Note that pages in your database will be overwritten; thus, if you dumped
+your FrontPage when you load it from this form it will overwrite the one
+in your database now. If you want to be selective just delete
+the pages from the directory you don't want to load.
+
+-----------

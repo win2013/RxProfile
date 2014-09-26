@@ -1,0 +1,38 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<meta name="robots" content="index,follow" />
+<meta name="language" content="en" />
+<meta name="PHPWIKI_VERSION" content="###PHPWIKI_VERSION###" />
+<link rel="shortcut icon" href="###DATA_PATH###/images/favicon.ico" />
+<title>###SPLIT_PAGE###</title>
+</head>
+
+<body bgcolor="ivory" text="black" alink="red" link="darkblue" vlink="darkmagenta">
+<h1><a href="###SCRIPTURL###"><img src="###LOGO###" border="0" alt="[phpwiki]" align="middle" width="50" height="50" /></a>
+<a href="###SCRIPTURL###?refs=###PAGEURL###">###SPLIT_PAGE###</a></h1>
+###IF:ADMIN###
+###IF LOCK###[<a href="###SCRIPTURL###?unlock=###PAGEURL###">Unlock page</a>]
+###IF !LOCK###[<a href="###SCRIPTURL###?lock=###PAGEURL###">Lock page</a>]
+- - 
+[<a href="###SCRIPTURL###?remove=###PAGEURL###">Remove page</a>]
+<hr noshade>
+###ENDIF:ADMIN###
+<p />
+###CONTENT###
+<hr noshade>
+###IF ADMIN###<a href="###SCRIPTURL###?edit=###PAGEURL###">编辑</a> 本页面
+###IF:!ADMIN###
+###IF LOCK###Page locked
+###IF !LOCK###<a href="###SCRIPTURL###?edit=###PAGEURL###">编辑</a> 本页面 
+###ENDIF:!ADMIN###
+(最后编辑时间 ###LASTMODIFIED###)
+[<a href="###SCRIPTURL###?info=###PAGEURL###">信息</a>]
+[<a href="###SCRIPTURL###?diff=###PAGEURL###">对比</a>])
+<br />
+<a href="###SCRIPTURL###?FindPage">查找页面</a> 
+<hr noshade>
+<small>###RELATEDPAGES###</small>
+
+</body>
+</html>
